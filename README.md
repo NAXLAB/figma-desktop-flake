@@ -9,7 +9,7 @@ this flake's own packaging code is MIT licensed, but the resulting package is ma
 ### Try it directly
 
 ```bash
-nix run github:YOUR_USERNAME/figma-desktop-flake
+nix run github:NAXLAB/figma-desktop-flake
 ```
 
 ### Add to your system flake
