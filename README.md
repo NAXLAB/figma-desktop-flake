@@ -19,7 +19,7 @@ nix run github:YOUR_USERNAME/figma-desktop-flake
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     figma-desktop = {
-      url = "github:YOUR_USERNAME/figma-desktop-flake";
+      url = "github:NAXLAB/figma-desktop-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
