@@ -12,12 +12,15 @@
         inherit system;
         config.allowUnfree = true;
       };
-      figma-desktop = pkgs.callPackage ./figma-desktop.nix { };
     in
     {
-      packages.${system} = {
+      packages.${system} = rec {
         default = figma-desktop;
-        figma-desktop = figma-desktop;
+        figma-desktop = pkgs.callPackage ./figma-desktop.nix { };
+      };
+
+      nixosModules.default = {
+        environment.systemPackages = [ self.packages.${system}.default ];
       };
     };
 }
