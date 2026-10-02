@@ -1,13 +1,7 @@
-{ lib, appimageTools, fetchurl, makeWrapper }:
+{ lib, appimageTools, makeWrapper, src, version }:
 
 let
   pname = "figma-desktop";
-  version = "126.5.6";
-
-  src = fetchurl {
-    url = "https://github.com/IliyaBrook/figma-linux/releases/download/${version}/figma-desktop-${version}-amd64.AppImage";
-    hash = "sha256-SLn4y+NVCcBDZrGqIpmpIEQavY7xngt5JMI8yG1g6/0=";
-  };
 
   appimageContents = appimageTools.extract { inherit pname version src; };
 in
